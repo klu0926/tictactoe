@@ -1,0 +1,180 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+.test {
+  border: 2px solid red;
+}
+
+body {
+  margin: 0;
+}
+
+
+/* header */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  height: 60px;
+  background: black;
+}
+
+#header .header-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+}
+
+#header img.logo {
+  width: 40px;
+  height: 40px;
+}
+
+#header p {
+  margin-left: 10px;
+  color: white;
+  font-weight: bolder;
+  font-size: 2rem;
+
+}
+
+#header button {
+  margin-right: 40px;
+  padding: 4px 10px;
+  color: white;
+  border-radius: 2px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#header button.blue {
+  background-color: #007bff;
+}
+
+#header button.blue:hover {
+  background-color: #298ffc;
+}
+
+#header button.red {
+  background-color: #d6000e;
+}
+
+#header button.red:hover {
+  background-color: rgb(255, 71, 47);
+}
+
+
+/* app */
+#app {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+
+/* info-display */
+#info-display {
+  position: absolute;
+  left: 2%;
+  top: 10%;
+  height: 400px;
+  width: 400px;
+  overflow-y: auto;
+}
+
+#info-display p {
+  color: rgb(192, 192, 192);
+}
+
+#mid-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+#app table {
+  align-self: center;
+  /* 讓自己變成 align-item: center */
+  border-collapse: collapse;
+  /*The border-collapse property sets whether table borders should collapse into a single border or be separated as in standard HTML.*/
+}
+
+#app table tr td:not(:last-child) {
+  /* :not(:last-child) 除了最後一個子元件除外, 所以每一排內的td的第1第2個會有一個 border-right */
+  border-right: 12px solid black;
+}
+
+#app table tr:not(:last-child) {
+  /* :not(:last-child)除了最後一個子元件除外, 所以最上面跟中間兩排(tr)會有 border-bottom */
+  border-bottom: 12px solid black;
+}
+
+#app table tr td {
+  height: 120px;
+  width: 120px;
+  text-align: center;
+}
+
+/* 在格子裡面的 div 用來作為ＯＸ使用 */
+#app table tr td div {
+  font-family: 'Tilt Warp', cursive;
+  font-size: 80px;
+  font-weight: 700;
+}
+
+/* circle 用來渲染 格子內的 div (上面) 使用  */
+#app table tr td .circle::after {
+  /* ::after 偽元素，會在指定低方創造出一個新的區塊，::after 指的是在母元素 裡面 的 最底下 */
+  content: "O";
+  color: #007bff
+}
+
+#app table tr td .cross::after {
+  content: "X";
+  color: #dc3545;
+}
+
+
+#player-display {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+  padding: 0;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#player-display p {
+  margin: 30px 0px;
+  padding: 0;
+}
+
+#player-display span {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  font-family: 'Tilt Warp', cursive;
+}
+
+#player-display span.cross::after {
+  content: "X";
+  color: #dc3545;
+}
+
+#player-display span.circle::after {
+  content: "O";
+  color: #007bff
+}
